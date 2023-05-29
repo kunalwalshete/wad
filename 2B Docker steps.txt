@@ -1,0 +1,23 @@
+step 1 : Launch Docker desktop
+
+step 2 : lauch vs code and install Docker extension
+
+step 3 : create file named 'Dockerfile' and write this code in that file
+
+FROM node:alpine
+COPY . /<folder name>
+CMD node /<folder name>/<.js file name>
+
+step 4 : create file 'filename.js' and write this code in it
+
+console.log("Anything");
+console.log("Class : TEIT");
+console.log("raww");
+
+step 5 : open terminal and inistilized npm using
+
+npm init
+
+step 6 : then right click on 'DockerFile' and click on build image
+
+step 7 : then go to docker --> image section --> you will see the image created by folder name run that image file and done.

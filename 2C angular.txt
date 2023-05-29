@@ -1,0 +1,184 @@
+new folder - terminal- npm --version
+                       npm install -g @angular/cli
+                       ng new partc
+
+                                      (if error then follow.)
+
+                     			  set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+                      			  Get-ExecutionPolicy
+                      			  Get-ExecutionPolicy -list
+                     			  (error solved then)
+
+                       ng new partc
+                       yes
+                       css
+                       cd partc
+
+                       (change the code of html and css then follow the command)
+                       ng serve
+                       yes
+
+
+src - app - 
+
+## app.component.html>>
+
+ <h1>User Registration Form</h1>
+<form>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required>
+  </div>
+  <div>
+    <label for="address">Address:</label>
+    <input type="text" id="address" [(ngModel)]="address" name="address" required>
+  </div>
+  <div>
+    <label for="contact">Contact:</label>
+    <input type="text" id="contact" [(ngModel)]="contact" name="contact" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required>
+  </div>
+  <button (click)="register()">Register</button>
+</form>
+<div *ngIf="showConfirmation">
+  <marquee class="hi">Thank you for registering!</marquee>
+  <p>Name: {{name}}</p>
+  <p>Address: {{address}}</p>
+  <p>Contact: {{contact}}</p>
+  <p>Email: {{email}}</p>
+</div>   
+
+         
+                                                                                                                                                                                        app.component.ts> import { Component } from '@angular/core';
+## app.component.ts> 
+
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  name: string = '';
+  address: string = '';
+  contact: string = '';
+  email: string = '';
+  showConfirmation: boolean = false;
+
+  register() {
+    this.showConfirmation = true;
+  }
+} 
+
+
+
+##app.module.ts>> 
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+
+ ## index.html>> 
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Partc</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+
+
+## styles.css>> 
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left:50px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  }
+  
+  button {
+    background-color: #424ecd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #201e4c;
+  }
+  
+  p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #b53636;
+  }
+
+  .hi {
+    font-size: xx-large;
+
+
+  }
+                       

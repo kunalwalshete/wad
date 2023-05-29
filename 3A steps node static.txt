@@ -1,0 +1,39 @@
+step 1: create index.js file on main folder
+
+
+step 2: Write the following code in it
+
+
+const express = require('express');
+// Express Dependency into the application loaded the dependence
+
+//  Express is a module with functions or objects or variables assigned to it
+
+const app = express();
+// initialize an applicatoin imported express
+
+const port = 4000;
+
+// to make pages .html .txt .jpeg .mp3 .mp4  static content
+
+app.use(express.static("public"));
+
+// basically telling express framework to take content inside the folder public and into the website
+app.listen(port, () => { console.log(`app started on port ${port}`) });
+
+//start the web server in port
+
+
+
+step 3 : create a folder named public under the main folder and add index.html (write any html code inside index.html) file to that folder
+
+
+step 4 : then execute the following Commands
+
+1) npm init   (hit enter till get on directory)
+
+2) npm i express --save
+
+3) node index.js
+
+then type on browser localhost:4000
